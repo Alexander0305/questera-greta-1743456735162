@@ -1,0 +1,41 @@
+/* Add to existing index.css */
+
+.hologram-chart {
+  position: relative;
+  overflow: hidden;
+}
+
+.hologram-chart::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    transparent 0%,
+    var(--hologram-glow) 50%,
+    transparent 100%
+  );
+  opacity: 0.1;
+  pointer-events: none;
+  animation: hologramScan 3s linear infinite;
+}
+
+@keyframes dataPoint {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.chart-container {
+  position: relative;
+  background: linear-gradient(180deg, 
+    var(--tech-gray) 0%,
+    var(--deep-space) 100%
+  );
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow: hidden;
+}
